@@ -1,13 +1,10 @@
-import RetroGrid from './ui/RetroGrid'
 import ShimmerButton from './ui/ShimmerButton'
 import { motion } from 'framer-motion'
 
 export default function Hero({ onDonateClick }) {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <RetroGrid />
-      
-      <div className="container mx-auto px-4 z-10">
+    <div className="w-full lg:w-1/2 flex items-center justify-center py-16 lg:py-0 z-10">
+      <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -31,7 +28,7 @@ export default function Hero({ onDonateClick }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-primary-100 to-primary-300 bg-clip-text text-transparent leading-tight"
+            className="text-4xl md:text-6xl lg:text-5xl xl:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-primary-100 to-primary-300 bg-clip-text text-transparent leading-tight"
           >
             16º Culto de
             <br />
@@ -43,7 +40,7 @@ export default function Hero({ onDonateClick }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
-            className="text-xl md:text-2xl text-gray-300 mb-4"
+            className="text-xl md:text-2xl lg:text-xl xl:text-2xl text-gray-300 mb-4"
           >
             Congregações Parque Savoy & Guarulhos
           </motion.p>
@@ -52,7 +49,7 @@ export default function Hero({ onDonateClick }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto"
+            className="text-base lg:text-sm xl:text-lg text-gray-400 mb-12 max-w-2xl mx-auto"
           >
             📍 São Paulo, SP • Junte-se a nós neste momento especial de gratidão e celebração
           </motion.p>
@@ -70,9 +67,6 @@ export default function Hero({ onDonateClick }) {
           </motion.div>
         </motion.div>
       </div>
-
-      {/* Gradient Overlay */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-950 to-transparent z-5" />
-    </section>
+    </div>
   )
 }

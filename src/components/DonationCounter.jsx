@@ -37,7 +37,7 @@ export default function DonationCounter() {
       const { data, error } = await supabase
         .from('donors')
         .select('total_donated')
-      
+
       if (error) throw error
 
       if (data) {
@@ -51,8 +51,8 @@ export default function DonationCounter() {
   }
 
   return (
-    <section className="py-20 px-4 relative">
-      <div className="container mx-auto max-w-5xl">
+    <div className="w-full lg:w-1/2 flex items-center justify-center py-10 lg:py-0 px-4 relative z-10">
+      <div className="w-full max-w-lg">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -62,7 +62,7 @@ export default function DonationCounter() {
         >
           {/* Efeito de brilho de fundo */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary-600/20 rounded-full blur-[120px] -z-10" />
-          
+
           <div className="text-center relative z-10">
             <motion.h2
               initial={{ opacity: 0 }}
@@ -108,6 +108,6 @@ export default function DonationCounter() {
           </div>
         </motion.div>
       </div>
-    </section>
+    </div>
   )
 }
