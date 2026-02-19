@@ -51,7 +51,7 @@ export default function Hero({ onDonateClick }) {
             transition={{ delay: 0.6 }}
             className="text-base lg:text-sm xl:text-lg text-gray-400 mb-12 max-w-2xl mx-auto"
           >
-            📍 São Paulo, SP • Junte-se a nós neste momento especial de gratidão e celebração
+            📍  • Junte-se a nós neste momento especial de gratidão e celebração
           </motion.p>
 
           {/* Call to Action */}

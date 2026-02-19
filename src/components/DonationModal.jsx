@@ -29,46 +29,46 @@ export default function DonationModal({ isOpen, onClose }) {
 
       // Limpar telefone (remover caracteres especiais)
       const cleanPhone = formData.phone.replace(/\D/g, '')
-      
+
       // Validar formato de telefone brasileiro
       if (cleanPhone.length !== 10 && cleanPhone.length !== 11) {
-        throw new Error('Telefone inválido. Use o formato: (11) 98684-0026 ou (11) 3895-1757')
+        throw new Error('Digite um número de telefone válido')
       }
-      
+
       // Validar DDD (códigos de área válidos no Brasil)
       const ddd = parseInt(cleanPhone.substring(0, 2))
       const validDDDs = [11, 12, 13, 14, 15, 16, 17, 18, 19, // SP
-                         21, 22, 24, // RJ
-                         27, 28, // ES
-                         31, 32, 33, 34, 35, 37, 38, // MG
-                         41, 42, 43, 44, 45, 46, // PR
-                         47, 48, 49, // SC
-                         51, 53, 54, 55, // RS
-                         61, // DF
-                         62, 64, // GO
-                         63, // TO
-                         65, 66, // MT
-                         67, // MS
-                         68, // AC
-                         69, // RO
-                         71, 73, 74, 75, 77, // BA
-                         79, // SE
-                         81, 87, // PE
-                         82, // AL
-                         83, // PB
-                         84, // RN
-                         85, 88, // CE
-                         86, 89, // PI
-                         91, 93, 94, // PA
-                         92, 97, // AM
-                         95, // RR
-                         96, // AP
-                         98, 99] // MA
-      
+        21, 22, 24, // RJ
+        27, 28, // ES
+        31, 32, 33, 34, 35, 37, 38, // MG
+        41, 42, 43, 44, 45, 46, // PR
+        47, 48, 49, // SC
+        51, 53, 54, 55, // RS
+        61, // DF
+        62, 64, // GO
+        63, // TO
+        65, 66, // MT
+        67, // MS
+        68, // AC
+        69, // RO
+        71, 73, 74, 75, 77, // BA
+        79, // SE
+        81, 87, // PE
+        82, // AL
+        83, // PB
+        84, // RN
+        85, 88, // CE
+        86, 89, // PI
+        91, 93, 94, // PA
+        92, 97, // AM
+        95, // RR
+        96, // AP
+        98, 99] // MA
+
       if (!validDDDs.includes(ddd)) {
         throw new Error('DDD inválido. Verifique o código de área.')
       }
-      
+
       // Se for celular (11 dígitos), validar que começa com 9
       if (cleanPhone.length === 11) {
         const thirdDigit = cleanPhone.charAt(2)
@@ -96,7 +96,7 @@ export default function DonationModal({ isOpen, onClose }) {
       // Chamar Edge Function para criar preferência de pagamento
       const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
       const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY
-      
+
       const response = await fetch(
         `${supabaseUrl}/functions/v1/criar-pagamento`,
         {
@@ -146,23 +146,23 @@ export default function DonationModal({ isOpen, onClose }) {
 
   const formatPhone = (value) => {
     const numbers = value.replace(/\D/g, '').substring(0, 11) // Limita a 11 dígitos
-    
+
     // Sem dígitos
     if (numbers.length === 0) return ''
-    
+
     // Apenas DDD (1-2 dígitos)
     if (numbers.length <= 2) return `(${numbers}`
-    
+
     // DDD completo (3-6 dígitos) - ainda não sabe se é fixo ou celular
     if (numbers.length <= 6) {
       return `(${numbers.slice(0, 2)}) ${numbers.slice(2)}`
     }
-    
+
     // 7-10 dígitos - formato de fixo
     if (numbers.length <= 10) {
       return `(${numbers.slice(0, 2)}) ${numbers.slice(2, 6)}-${numbers.slice(6, 10)}`
     }
-    
+
     // 11 dígitos - formato de celular
     return `(${numbers.slice(0, 2)}) ${numbers.slice(2, 7)}-${numbers.slice(7, 11)}`
   }
@@ -238,12 +238,14 @@ export default function DonationModal({ isOpen, onClose }) {
                   value={formData.phone}
                   onChange={handlePhoneChange}
                   className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition-all"
-                  placeholder="(11) 98684-0026 ou (11) 3895-1757"
+                  placeholder="Digite seu telefone"
                   required
                 />
-                <p className="mt-1 text-xs text-gray-500">
-                  📱 Celular: (11) 9xxxx-xxxx • ☎️ Fixo: (11) xxxx-xxxx
-                </p>
+                <div className="mt-1 flex flex-col sm:flex-row sm:gap-1 text-xs text-gray-500">
+                  <span>📱 Celular: (11) 9xxxx-xxxx</span>
+                  <span className="hidden sm:inline">•</span>
+                  <span>☎️ Fixo: (11) xxxx-xxxx</span>
+                </div>
               </div>
 
               <div>
