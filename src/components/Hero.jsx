@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 export default function Hero({ onDonateClick }) {
   return (
-    <div className="w-full lg:w-1/2 flex items-center justify-center py-16 lg:py-0 z-10">
+    <div className="w-full lg:w-1/2 flex items-center justify-center pt-24 pb-16 lg:py-0 z-10">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
