@@ -5,14 +5,23 @@ import DonorsList from '../components/DonorsList'
 import DonationModal from '../components/DonationModal'
 import Footer from '../components/Footer'
 import RetroGrid from '../components/ui/RetroGrid'
+import Header from '../components/Header'
+import InfoModal from '../components/InfoModal'
+import RSVPModal from '../components/RSVPModal'
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isInfoModalOpen, setIsInfoModalOpen] = useState(false)
+  const [isRSVPModalOpen, setIsRSVPModalOpen] = useState(false)
 
   return (
     <div className="min-h-screen">
       <section className="relative min-h-screen flex flex-col lg:flex-row items-center justify-center overflow-hidden bg-slate-950">
         <RetroGrid />
+        <Header
+          onInfoClick={() => setIsInfoModalOpen(true)}
+          onRSVPClick={() => setIsRSVPModalOpen(true)}
+        />
         <Hero onDonateClick={() => setIsModalOpen(true)} />
         <DonationCounter />
         {/* Gradient Overlay */}
@@ -20,10 +29,20 @@ export default function Home() {
       </section>
       <DonorsList />
       <Footer onDonateClick={() => setIsModalOpen(true)} />
-      
-      <DonationModal 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
+
+      <DonationModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
+
+      <InfoModal
+        isOpen={isInfoModalOpen}
+        onClose={() => setIsInfoModalOpen(false)}
+      />
+
+      <RSVPModal
+        isOpen={isRSVPModalOpen}
+        onClose={() => setIsRSVPModalOpen(false)}
       />
     </div>
   )
