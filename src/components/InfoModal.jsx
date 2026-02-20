@@ -70,6 +70,12 @@ export default function InfoModal({ isOpen, onClose }) {
                             <p className="text-gray-300 text-sm text-center mt-3 border-t border-slate-700 pt-3 m-0">
                                 O que este valor cobre? O pernoite no local e as 12 refeições preparadas na hora.
                             </p>
+                            <p className="text-gray-300 text-sm text-center mt-3 border-t border-slate-700 pt-3 m-0">
+                                É muito importante trazer colchão de ar, travesseiro e roupa de cama.
+                            </p>
+                            <p className="text-gray-300 text-sm text-center mt-3 border-t border-slate-700 pt-3 m-0">
+                                Tragam também barraca de camping, pois o espaço é amplo e tem lugar para todos.
+                            </p>
                         </div>
 
                         <p className="text-gray-400 text-sm italic mb-6">
@@ -85,7 +91,7 @@ export default function InfoModal({ isOpen, onClose }) {
 
                         <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-4 text-center">
                             <p className="text-red-200 font-bold m-0">
-                                📅 Prazo para Confirmação e Pagamento: 30/12/2026
+                                📅 Prazo para Confirmação e Pagamento: 30/10/2026
                             </p>
                         </div>
 
