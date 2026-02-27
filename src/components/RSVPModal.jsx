@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { supabase } from '../lib/supabaseClient'
-import { motion, AnimatePresence } from 'framer-motion'
+import { AnimatePresence } from 'framer-motion'
 
 export default function RSVPModal({ isOpen, onClose }) {
     const [formData, setFormData] = useState({ name: '', phone: '' })

@@ -1,5 +1,5 @@
 import ShimmerButton from './ui/ShimmerButton'
-import { motion } from 'framer-motion'
+
 
 export default function Hero({ onDonateClick }) {
   return (

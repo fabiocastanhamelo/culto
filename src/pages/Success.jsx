@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { motion } from 'framer-motion'
+
 
 export default function Success() {
   const navigate = useNavigate()
@@ -9,7 +9,7 @@ export default function Success() {
   useEffect(() => {
     // Scroll to top
     window.scrollTo(0, 0)
-    
+
     // Countdown
     const timer = setInterval(() => {
       setCountdown((prev) => {
@@ -68,7 +68,7 @@ export default function Success() {
           <p className="text-xl text-gray-300 mb-6">
             Muito obrigado pela sua generosidade!
           </p>
-          
+
           <div className="bg-slate-800/50 rounded-2xl p-6 mb-6 border border-slate-700 backdrop-blur-sm">
             <p className="text-gray-400 text-sm mb-3">
               Sua contribuição é fundamental para o sucesso do

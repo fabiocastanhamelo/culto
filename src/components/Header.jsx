@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+
 import ShimmerButton from './ui/ShimmerButton'
 
 export default function Header({ onInfoClick, onRSVPClick }) {

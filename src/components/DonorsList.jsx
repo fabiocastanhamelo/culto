@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { supabase } from '../lib/supabaseClient'
 import Marquee from './ui/Marquee'
-import { motion } from 'framer-motion'
+
 
 export default function DonorsList() {
   const [recentDonors, setRecentDonors] = useState([])
@@ -68,7 +68,7 @@ export default function DonorsList() {
           {/* Gradientes laterais para efeito de fade */}
           <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-slate-950 to-transparent z-10" />
           <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-slate-950 to-transparent z-10" />
-          
+
           <Marquee>
             {recentDonors.map((donor, index) => (
               <DonorCard key={index} donor={donor} />
