@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { supabase } from '../lib/supabaseClient'
 import NumberTicker from './ui/NumberTicker'
-
+import { motion } from 'framer-motion'
 
 export default function DonationCounter() {
   const [totalAmount, setTotalAmount] = useState(0)

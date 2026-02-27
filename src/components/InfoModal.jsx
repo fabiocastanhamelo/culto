@@ -1,4 +1,4 @@
-import { AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 
 export default function InfoModal({ isOpen, onClose }) {
     if (!isOpen) return null
