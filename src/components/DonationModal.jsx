@@ -282,7 +282,7 @@ export default function DonationModal({ isOpen, onClose }) {
               </div>
 
               {error && (
-                <div className="p-3 bg-red-500/10 border border-red-500/50 rounded-lg text-red-400 text-sm">
+                <div className="p-3 bg-primary-500/10 border border-primary-500/50 rounded-lg text-primary-400 text-sm">
                   {error}
                 </div>
               )}

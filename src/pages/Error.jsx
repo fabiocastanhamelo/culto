@@ -8,7 +8,7 @@ export default function Error() {
 
   useEffect(() => {
     window.scrollTo(0, 0)
-    
+
     const timer = setInterval(() => {
       setCountdown((prev) => {
         if (prev <= 1) {
@@ -37,7 +37,7 @@ export default function Error() {
           transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
           className="mb-8"
         >
-          <div className="w-32 h-32 mx-auto bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center shadow-[0_0_50px_rgba(239,68,68,0.4)]">
+          <div className="w-32 h-32 mx-auto bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center shadow-[0_0_50px_rgba(70,192,1,0.4)]">
             <svg
               className="w-16 h-16 text-white"
               fill="none"
@@ -66,7 +66,7 @@ export default function Error() {
           <p className="text-xl text-gray-300 mb-6">
             Houve um problema ao processar seu pagamento.
           </p>
-          
+
           <div className="bg-slate-800/50 rounded-2xl p-6 mb-6 border border-slate-700 backdrop-blur-sm">
             <p className="text-gray-400 text-sm mb-3">
               Não se preocupe, nenhum valor foi cobrado.
@@ -86,7 +86,7 @@ export default function Error() {
           <div className="flex flex-col gap-3 mb-6">
             <button
               onClick={() => navigate('/')}
-              className="px-8 py-3 bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-500 hover:to-primary-600 text-white font-bold rounded-xl transition-all hover:shadow-[0_0_30px_rgba(239,68,68,0.4)]"
+              className="px-8 py-3 bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-500 hover:to-primary-600 text-white font-bold rounded-xl transition-all hover:shadow-[0_0_30px_rgba(70,192,1,0.4)]"
             >
               Tentar Novamente
             </button>

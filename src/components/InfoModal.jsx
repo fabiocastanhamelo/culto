@@ -89,8 +89,8 @@ export default function InfoModal({ isOpen, onClose }) {
                             Se você sente no coração o desejo de ajudar além do mínimo, sua doação extra será muito bem-vinda! Ela será integralmente revertida para o fundo de hospitalidade.
                         </p>
 
-                        <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-4 text-center">
-                            <p className="text-red-200 font-bold m-0">
+                        <div className="bg-primary-500/10 border border-primary-500/20 rounded-xl p-4 text-center">
+                            <p className="text-primary-200 font-bold m-0">
                                 📅 Prazo para Confirmação e Pagamento: 30/10/2026
                             </p>
                         </div>
